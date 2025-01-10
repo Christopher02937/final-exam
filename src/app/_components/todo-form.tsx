@@ -72,9 +72,9 @@ export default function TodoForm({ userId }: { userId: string }) {
 						<FormItem>
 							<FormLabel>Name</FormLabel>
 							<FormControl>
-								<Input placeholder="Enter todo title" {...field} />
+								<Input placeholder="" {...field} />
 							</FormControl>
-							<FormDescription>Name of the medicine.</FormDescription>
+							<FormDescription>Biogesic.</FormDescription>
 							<FormMessage />
 						</FormItem>
 					)}
@@ -86,7 +86,7 @@ export default function TodoForm({ userId }: { userId: string }) {
 						<FormItem>
 							<FormLabel>Note</FormLabel>
 							<FormControl>
-								<Textarea placeholder="Enter todo description" {...field} />
+								<Textarea placeholder="Para sa hilanat" {...field} />
 							</FormControl>
 							<FormDescription>
 								A detailed note of your medicine.
