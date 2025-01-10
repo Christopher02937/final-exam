@@ -17,7 +17,7 @@ export default async function TodoList({ userId }: { userId: string }) {
 				>
 					<div>
 						<h3 className="text-sm   font-semibold">{todo.title}</h3>
-						<p className="text-muted-foreground text-xs">{todo.description}</p>
+						<p className="text-muted-foreground text-xs"><strong>Note: </strong>{todo.description}</p>
 					</div>
 				</li>
 			))}
