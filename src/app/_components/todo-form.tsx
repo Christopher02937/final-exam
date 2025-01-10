@@ -55,7 +55,7 @@ export default function TodoForm({ userId }: { userId: string }) {
 			} else {
 				toast({
 					title: "Success",
-					description: "Todo created successfully!",
+					description: "Medince added successfully!",
 				});
 				form.reset();
 			}
