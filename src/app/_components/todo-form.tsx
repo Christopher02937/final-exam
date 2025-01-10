@@ -72,9 +72,9 @@ export default function TodoForm({ userId }: { userId: string }) {
 						<FormItem>
 							<FormLabel>Name</FormLabel>
 							<FormControl>
-								<Input placeholder="" {...field} />
+								<Input placeholder="Biogesic" {...field} />
 							</FormControl>
-							<FormDescription>Biogesic.</FormDescription>
+							<FormDescription>Name of your medicine</FormDescription>
 							<FormMessage />
 						</FormItem>
 					)}
