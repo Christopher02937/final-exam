@@ -7,7 +7,6 @@ import { revalidatePath } from "next/cache";
 const TodoSchema = z.object({
 	title: z.string().min(1, "Title is required"),
 	description: z.string(),
-	completed: z.boolean().default(false),
 	userId: z.string(),
 });
 
@@ -26,7 +25,6 @@ export async function createTodo(data: TodoSchemaType) {
 			data: {
 				description: validatedFields.data.description,
 				title: validatedFields.data.title,
-				completed: validatedFields.data.completed,
 				userId: validatedFields.data.userId,
 			},
 		});

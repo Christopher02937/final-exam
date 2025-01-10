@@ -23,7 +23,6 @@ import { useToast } from "@/hooks/use-toast";
 const TodoSchema = z.object({
 	title: z.string().min(1, "Title is required"),
 	description: z.string(),
-	completed: z.boolean().default(false),
 });
 
 type TodoFormValues = z.infer<typeof TodoSchema>;
@@ -37,7 +36,6 @@ export default function TodoForm({ userId }: { userId: string }) {
 		defaultValues: {
 			title: "",
 			description: "",
-			completed: false,
 		},
 	});
 
@@ -72,11 +70,11 @@ export default function TodoForm({ userId }: { userId: string }) {
 					name="title"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Title</FormLabel>
+							<FormLabel>Name</FormLabel>
 							<FormControl>
 								<Input placeholder="Enter todo title" {...field} />
 							</FormControl>
-							<FormDescription>The title of your todo item.</FormDescription>
+							<FormDescription>Name of the medicine.</FormDescription>
 							<FormMessage />
 						</FormItem>
 					)}
@@ -86,35 +84,18 @@ export default function TodoForm({ userId }: { userId: string }) {
 					name="description"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Description</FormLabel>
+							<FormLabel>Note</FormLabel>
 							<FormControl>
 								<Textarea placeholder="Enter todo description" {...field} />
 							</FormControl>
 							<FormDescription>
-								A detailed description of your todo item.
+								A detailed note of your medicine.
 							</FormDescription>
 							<FormMessage />
 						</FormItem>
 					)}
 				/>
-				<FormField
-					control={form.control}
-					name="completed"
-					render={({ field }) => (
-						<FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
-							<FormControl>
-								<Checkbox
-									checked={field.value}
-									onCheckedChange={field.onChange}
-								/>
-							</FormControl>
-							<div className="space-y-1 leading-none">
-								<FormLabel>Completed</FormLabel>
-								<FormDescription>Mark this todo as completed.</FormDescription>
-							</div>
-						</FormItem>
-					)}
-				/>
+				
 				<Button type="submit" disabled={isPending} className="w-full" size={"lg"}>
 					{isPending ? "Creating..." : "Create Todo"}
 				</Button>
