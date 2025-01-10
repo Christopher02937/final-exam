@@ -49,7 +49,7 @@ export default function TodoForm({ userId }: { userId: string }) {
 			if (result.error) {
 				toast({
 					title: "Error",
-					description: "Failed to create todo. Please try again.",
+					description: "Failed to add medicine. Please try again.",
 					variant: "destructive",
 				});
 			} else {
@@ -97,7 +97,7 @@ export default function TodoForm({ userId }: { userId: string }) {
 				/>
 				
 				<Button type="submit" disabled={isPending} className="w-full" size={"lg"}>
-					{isPending ? "Creating..." : "Create Todo"}
+					{isPending ? "Adding..." : "Add Medicine"}
 				</Button>
 			</form>
 		</Form>

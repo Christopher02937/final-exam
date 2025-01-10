@@ -32,6 +32,6 @@ export async function createTodo(data: TodoSchemaType) {
 		return { success: true, id: newTodo.id };
 	} catch (error) {
 		console.log('error :>> ', error);
-		return { error: "Failed to create todo" };
+		return { error: "Failed to add medicine" };
 	}
 }
